@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JPCスポーツ教室 安城店｜体幹特化型こども運動教室</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange:    #FF6B35;
+      --orange-lt: #FFB347;
+      --teal:      #3BBFB2;
+      --navy:      #1A2E4A;
+      --navy-lt:   #2B4870;
+      --white:     #FFFFFF;
+      --bg:        #F7F9FC;
+      --text:      #2D3748;
+      --gray:      #718096;
+      --radius-lg: 20px;
+      --radius-xl: 32px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== UTILITY ===== */
+    .container {
+      width: min(100%, 900px);
+      margin-inline: auto;
+      padding-inline: 20px;
+    }
+    .section-title {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--gray);
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .tag {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      padding: 3px 14px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--navy);
+      padding: 14px 20px;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 900px;
+      margin-inline: auto;
+    }
+    .header-logo {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      color: #fff;
+      line-height: 1.2;
+    }
+    .header-logo a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .header-logo span {
+      color: var(--orange-lt);
+    }
+    .header-tel {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 800;
+      color: var(--white);
+      font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+      text-align: right;
+    }
+    .header-tel small {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.65);
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    /* ===== HERO IMAGE ===== */
+    .hero-image {
+      width: 100%;
+      max-height: 540px;
+      overflow: hidden;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* ===== HERO TEXT ===== */
+    .hero-text {
+      background: var(--navy);
+      padding: 44px 20px 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-text::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: var(--bg);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-text .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,107,53,0.18);
+      border: 1.5px solid rgba(255,107,53,0.5);
+      color: var(--orange-lt);
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 4px 16px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+    }
+    .hero-text h1 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 5.5vw, 2.8rem);
+      color: #fff;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .hero-text h1 em {
+      color: var(--orange-lt);
+      font-style: normal;
+    }
+    .hero-text .lead {
+      color: rgba(255,255,255,0.82);
+      font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+      max-width: 560px;
+      margin-inline: auto;
+      margin-bottom: 30px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1rem, 3vw, 1.15rem);
+      padding: 16px 36px;
+      border-radius: 100px;
+      box-shadow: 0 6px 20px rgba(255,107,53,0.4);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,107,53,0.45); }
+    .btn-secondary {
+      display: inline-block;
+      background: var(--teal);
+      color: #fff;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 14px 30px;
+      border-radius: 100px;
+      box-shadow: 0 4px 14px rgba(59,191,178,0.35);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(59,191,178,0.4); }
+    .btn-outline {
+      display: inline-block;
+      border: 2.5px solid var(--orange);
+      color: var(--orange);
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 12px 28px;
+      border-radius: 100px;
+      transition: background .2s, color .2s;
+    }
+    .btn-outline:hover { background: var(--orange); color: #fff; }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    /* ===== RECOMMEND BADGE ===== */
+    .recommend {
+      padding: 56px 20px 20px;
+      text-align: center;
+    }
+    .recommend-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-lt) 100%);
+      color: #fff;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+      padding: 18px 36px;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 8px 28px rgba(255,107,53,0.3);
+      margin-bottom: 10px;
+    }
+
+    /* ===== OSHIMONO (FEATURED SERVICE) ===== */
+    .oshimono {
+      padding: 20px 20px 64px;
+    }
+    .oshimono-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 4px 30px rgba(26,46,74,0.08);
+    }
+    .oshimono-head {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-lt) 100%);
+      padding: 32px 28px 28px;
+      text-align: center;
+    }
+    .oshimono-head h2 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.3rem, 4vw, 1.9rem);
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .oshimono-head p {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.95rem;
+    }
+    .oshimono-body {
+      padding: 32px 28px;
+    }
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .feature-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .feature-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-lt));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .feature-text strong {
+      display: block;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 800;
+      font-size: 1.02rem;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .feature-text p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    .trial-box {
+      background: linear-gradient(135deg, #FFF5F0 0%, #FFF8F0 100%);
+      border: 2px solid var(--orange-lt);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-top: 28px;
+      text-align: center;
+    }
+    .trial-box .trial-label {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+    .trial-box p {
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    /* ===== STRENGTHS ===== */
+    .strengths {
+      background: var(--navy);
+      padding: 64px 20px;
+      position: relative;
+    }
+    .strengths::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 0; right: 0;
+      height: 40px;
+      background: var(--bg);
+      clip-path: ellipse(55% 100% at 50% 0%);
+    }
+    .strengths .section-title { color: #fff; }
+    .strengths .section-sub { color: rgba(255,255,255,0.6); }
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+    .strength-card {
+      background: rgba(255,255,255,0.07);
+      border: 1.5px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      text-align: center;
+      transition: background .2s;
+    }
+    .strength-card:hover { background: rgba(255,255,255,0.11); }
+    .strength-card .icon {
+      font-size: 2.6rem;
+      margin-bottom: 14px;
+    }
+    .strength-card h3 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--orange-lt);
+      margin-bottom: 8px;
+    }
+    .strength-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.65;
+    }
+
+    /* ===== STORY ===== */
+    .story {
+      padding: 72px 20px 64px;
+    }
+    .story-inner {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 40px 32px;
+      box-shadow: 0 4px 28px rgba(26,46,74,0.07);
+      max-width: 780px;
+      margin-inline: auto;
+    }
+    .story-inner h2 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.15rem, 3.5vw, 1.55rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .story-inner p {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.85;
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews {
+      background: linear-gradient(180deg, var(--bg) 0%, #EDF2FF 100%);
+      padding: 64px 20px;
+    }
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .review-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 26px 24px;
+      box-shadow: 0 3px 18px rgba(26,46,74,0.07);
+      position: relative;
+    }
+    .review-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 4rem;
+      color: var(--orange);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .review-stars {
+      color: #F59E0B;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .review-text {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* ===== COMING SOON ===== */
+    .coming-soon {
+      padding: 56px 20px;
+      text-align: center;
+    }
+    .coming-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      border: 2px dashed var(--teal);
+      border-radius: var(--radius-lg);
+      padding: 16px 28px;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+    .coming-badge .cs-tag {
+      background: var(--teal);
+      color: #fff;
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-lt) 100%);
+      padding: 64px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 0; right: 0;
+      height: 40px;
+      background: linear-gradient(180deg, var(--bg) 0%, transparent 100%);
+      clip-path: ellipse(55% 100% at 50% 0%);
+      background: #EDF2FF;
+    }
+    .cta-section h2 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.4rem, 4.5vw, 2.1rem);
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 28px;
+      font-size: 0.98rem;
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .btn-white {
+      display: inline-block;
+      background: #fff;
+      color: var(--orange);
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 900;
+      font-size: 1.05rem;
+      padding: 16px 36px;
+      border-radius: 100px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.16); }
+    .btn-white-outline {
+      display: inline-block;
+      border: 2.5px solid rgba(255,255,255,0.8);
+      color: #fff;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 800;
+      font-size: 0.98rem;
+      padding: 14px 30px;
+      border-radius: 100px;
+      transition: background .2s;
+    }
+    .btn-white-outline:hover { background: rgba(255,255,255,0.15); }
+
+    /* ===== INFO ===== */
+    .info-section {
+      padding: 64px 20px;
+    }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 3px 18px rgba(26,46,74,0.07);
+    }
+    .info-table tr:not(:last-child) td { border-bottom: 1px solid #E8EEFB; }
+    .info-table td {
+      padding: 14px 18px;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .info-table td:first-child {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      width: 100px;
+      background: #F0F5FF;
+    }
+    .info-table a { color: var(--orange); }
+
+    /* ===== MAP ===== */
+    .map-section {
+      padding: 0 20px 64px;
+    }
+    .map-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(26,46,74,0.1);
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      display: block;
+    }
+    .map-btn-wrap {
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      padding: 40px 20px 24px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .footer-address {
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 0.85rem;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.65);
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--orange-lt); }
+    .footer-sns {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .footer-sns a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+    .footer-sns a:hover { background: rgba(255,255,255,0.18); }
+    .footer-sns svg { width: 20px; height: 20px; }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .header-inner { gap: 12px; }
+      .hero-text { padding: 36px 16px 48px; }
+      .oshimono-body { padding: 24px 18px; }
+      .story-inner { padding: 28px 20px; }
+      .strength-grid { grid-template-columns: 1fr; }
+      .info-table td:first-child { width: 82px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-inner">
+      <div class="header-logo">
+        <a href="https://jpc-sports.com/anjo/" target="_blank" rel="noopener">
+          JPC<span>スポーツ教室</span><br>安城店
+        </a>
+      </div>
+      <div class="header-tel">
+        <small>お電話でのお問い合わせ</small>
+        <a href="tel:0566457018" style="color:#fff;">0566-45-7018</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO IMAGE ===== -->
+  <div class="hero-image">
+    <img src="images/hero.jpg" alt="JPCスポーツ教室 安城店 — 子どもたちが楽しくトレーニングしている様子">
+  </div>
+
+  <!-- ===== HERO TEXT ===== -->
+  <section class="hero-text">
+    <p class="eyebrow">🏅 体幹特化型こども運動教室</p>
+    <h1>動ける体と<em>強い心</em>を、<br>楽しく育てよう。</h1>
+    <p class="lead">プロアスリートも取り入れるKOBA式体幹トレーニングを子どもの成長に合わせてアレンジ。3歳から通える、笑顔あふれる教室です。</p>
+    <div class="hero-cta">
+      <a href="https://line.me/R/ti/p/@679ycvlm?from=page&oat_content=url&openQrModal=true&searchId=679ycvlm" class="btn-primary" target="_blank" rel="noopener">無料体験レッスンに申し込む</a>
+      <a href="https://jpc-sports.com/anjo/corp-contact/" class="btn-secondary" target="_blank" rel="noopener">お問い合わせ</a>
+    </div>
+  </section>
+
+  <!-- ===== RECOMMEND ===== -->
+  <section class="recommend">
+    <div class="tag">イチオシ</div>
+    <div class="recommend-badge">✨ 体幹トレーニング特化プログラム</div>
+    <p style="font-size:0.9rem; color:var(--gray); margin-top:8px;">プロが認める本格メソッドで、お子さまの「土台」をつくります</p>
+  </section>
+
+  <!-- ===== OSHIMONO ===== -->
+  <section class="oshimono">
+    <div class="container">
+      <div class="oshimono-card">
+        <div class="oshimono-head">
+          <h2>JPCスポーツ教室が選ばれる理由</h2>
+          <p>遊びながら、本物の体力・運動能力が身につく</p>
+        </div>
+        <div class="oshimono-body">
+          <ul class="feature-list">
+            <li>
+              <div class="feature-icon">🏋️</div>
+              <div class="feature-text">
+                <strong>体幹トレーニングに特化</strong>
+                <p>KOBA★トレを導入し、姿勢や運動の土台となる体幹を本格的に鍛えられます。</p>
+              </div>
+            </li>
+            <li>
+              <div class="feature-icon">🌈</div>
+              <div class="feature-text">
+                <strong>3歳から通える幅広いクラス</strong>
+                <p>園児向けの遊びを通じた体操から、中高生のアスリート向け体幹強化まで、年齢や目的に合わせた指導が受けられます。</p>
+              </div>
+            </li>
+            <li>
+              <div class="feature-icon">🎮</div>
+              <div class="feature-text">
+                <strong>遊び感覚で続けられるメニュー</strong>
+                <p>運動が苦手な子でも「トレーニング」と感じさせない工夫が満載。バランス・反応力・柔軟性を自然に高めます。</p>
+              </div>
+            </li>
+            <li>
+              <div class="feature-icon">🦸</div>
+              <div class="feature-text">
+                <strong>礼儀と心の成長を重視</strong>
+                <p>「ヒーローメーカー」を理念に掲げ、挨拶などの礼儀や強いメンタル、社会性を育てます。</p>
+              </div>
+            </li>
+            <li>
+              <div class="feature-icon">👥</div>
+              <div class="feature-text">
+                <strong>一人ひとりに合わせた丁寧な指導</strong>
+                <p>コーチが生徒それぞれのレベルや個性を把握しながら指導。初めてのお子さまも安心してスタートできます。</p>
+              </div>
+            </li>
+          </ul>
+          <div class="trial-box">
+            <div class="trial-label">🎉 60分無料体験レッスン実施中！</div>
+            <p>通常の授業をそのまま体験できます。まずはお気軽にお申し込みください。</p>
+            <a href="https://line.me/R/ti/p/@679ycvlm?from=page&oat_content=url&openQrModal=true&searchId=679ycvlm" class="btn-primary" target="_blank" rel="noopener">LINEで無料体験を申し込む</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STRENGTHS ===== -->
+  <section class="strengths">
+    <div class="container">
+      <div class="tag" style="background:var(--teal);">教室の特徴</div>
+      <h2 class="section-title">充実した環境と指導</h2>
+      <p class="section-sub">お子さまが安全・快適に成長できる場所</p>
+      <div class="strength-grid">
+        <div class="strength-card">
+          <div class="icon">🌿</div>
+          <h3>全面人工芝</h3>
+          <p>足腰に優しい人工芝を完備。転んでも安心な環境でのびのびトレーニングできます。</p>
+        </div>
+        <div class="strength-card">
+          <div class="icon">❄️</div>
+          <h3>冷暖房完備</h3>
+          <p>1年を通じて快適な室温で練習できます。天候や季節に左右されません。</p>
+        </div>
+        <div class="strength-card">
+          <div class="icon">🧡</div>
+          <h3>褒めて伸ばす指導</h3>
+          <p>元保育士・子育て経験者のコーチが在籍。お子さまの「やる気」と「自信」を引き出します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section class="story">
+    <div class="container">
+      <div class="tag" style="background:var(--teal);">代表ストーリー</div>
+      <h2 class="section-title">創業者の想い</h2>
+      <p class="section-sub">JPCスポーツ教室が生まれた背景</p>
+      <div class="story-inner">
+        <h2>「子ども達が楽しみながら<br>成長できる空間をつくりたい」</h2>
+        <p>JPCスポーツ教室を創業したのは、株式会社J-PRoach代表取締役の髙木宏昌氏。4児の父親として、子ども自身が成長を掴み取れる環境づくりを大切にし、「遊び」を通して体を動かしながら、考える力やコミュニケーション力を育むことを目指しています。<br><br>岐阜県羽島市から始まった取り組みは、現在全国へと広がっています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews">
+    <div class="container">
+      <div class="tag">口コミ</div>
+      <h2 class="section-title">通っているご家族の声</h2>
+      <p class="section-sub">安城店に寄せられたリアルな声をご紹介します</p>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">年少から2年程お世話になっていますが、レッスンはとても分かりやすく、うちの子は跳び箱4段にチャレンジしたり鉄棒も逆上がりを頑張ったりと色んな事ができるようになりました。コーチは、生徒一人ひとりのレベルに合わせて丁寧に教えてくれるので、初心者でも安心して始められます。レッスンの進め方も基礎から応用までバランスが良く、子供達が飽きない工夫をしています。なによりもコーチや子供の笑顔が絶えず楽しい雰囲気の中でレッスンを受けられるのが1番良いと感じ、兄弟揃ってコーチが大好きで毎回楽しく通っています。また、教室の設備も清潔で快適にレッスンを受けられます。</p>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">通い始めて1年半くらいになります。体幹トレーニングの後に跳び箱や縄跳び、鉄棒、ボール等飽きないようにさまざまなことをローテーションで教えてくれます。服装も指定の購入がないので助かりますし、最後に遊びの時間もあり、楽しく通っています。近くにも教室ができましたが、安城店の先生が良いとこちらまで通っています☆</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMING SOON ===== -->
+  <section class="coming-soon">
+    <div class="tag" style="background:var(--teal);">近日公開</div>
+    <h2 class="section-title" style="margin-bottom:16px;">準備中のサービス</h2>
+    <div class="coming-badge">
+      <span class="cs-tag">NEW</span>
+      📹 練習動画を送るとコーチが改善点をフィードバック
+    </div>
+    <p style="font-size:0.85rem; color:var(--gray); margin-top:12px;">詳細はSNSやLINEでお知らせします。お楽しみに！</p>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>まずは60分、無料で体験してみよう！</h2>
+      <p>雰囲気・コーチ・メニューを実際に見てからご入会を決めていただけます。</p>
+      <div class="cta-group">
+        <a href="https://line.me/R/ti/p/@679ycvlm?from=page&oat_content=url&openQrModal=true&searchId=679ycvlm" class="btn-white" target="_blank" rel="noopener">LINEで無料体験を申し込む</a>
+        <a href="https://jpc-sports.com/anjo/corp-contact/" class="btn-white-outline" target="_blank" rel="noopener">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFO ===== -->
+  <section class="info-section">
+    <div class="container">
+      <div class="tag">基本情報</div>
+      <h2 class="section-title">教室情報</h2>
+      <p class="section-sub">JPCスポーツ教室 安城店</p>
+      <table class="info-table">
+        <tr>
+          <td>住所</td>
+          <td>〒446-0034 愛知県安城市南町17−18</td>
+        </tr>
+        <tr>
+          <td>電話</td>
+          <td><a href="tel:0566457018">0566-45-7018</a></td>
+        </tr>
+        <tr>
+          <td>休校日</td>
+          <td>日曜・祝日（祝日営業日あり）</td>
+        </tr>
+        <tr>
+          <td>公式サイト</td>
+          <td><a href="https://jpc-sports.com/anjo/" target="_blank" rel="noopener">https://jpc-sports.com/anjo/</a></td>
+        </tr>
+        <tr>
+          <td>お問い合わせ</td>
+          <td><a href="https://jpc-sports.com/anjo/corp-contact/" target="_blank" rel="noopener">お問い合わせフォーム</a></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== MAP ===== -->
+  <section class="map-section">
+    <div class="container">
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.2405186316255!2d137.087823!3d34.95057990000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600499bfcade7731%3A0x86fb19d43d6c15a0!2zSlBD44K544Od44O844OE5pWZ5a6kIOWuieWfjuW6lw!5e0!3m2!1sja!2sjp!4v1792556378512!5m2!1sja!2sjp"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="JPCスポーツ教室 安城店 地図">
+        </iframe>
+      </div>
+      <div class="map-btn-wrap">
+        <a href="https://www.google.com/maps/place/JPC%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E6%95%99%E5%AE%A4+%E5%AE%89%E5%9F%8E%E5%BA%97/@34.9505799,137.087823,17z/data=!3m1!4b1!4m6!3m5!1s0x600499bfcade7731:0x86fb19d43d6c15a0!8m2!3d34.9505799!4d137.087823!16s%2Fg%2F11lrckvrgy?authuser=0&entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D" class="btn-outline" target="_blank" rel="noopener">Googleマップで見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-logo">JPCスポーツ教室 安城店</div>
+    <div class="footer-address">
+      〒446-0034 愛知県安城市南町17−18<br>
+      TEL: <a href="tel:0566457018" style="color:rgba(255,255,255,0.7);">0566-45-7018</a>
+    </div>
+    <div class="footer-sns">
+      <!-- Instagram 公式アイコン -->
+      <a href="https://www.instagram.com/jpcsports.anjo/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <defs>
+            <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+              <stop offset="0%" stop-color="#fdf497"/>
+              <stop offset="5%" stop-color="#fdf497"/>
+              <stop offset="45%" stop-color="#fd5949"/>
+              <stop offset="60%" stop-color="#d6249f"/>
+              <stop offset="90%" stop-color="#285AEB"/>
+            </radialGradient>
+          </defs>
+          <rect width="24" height="24" rx="6" fill="url(#ig-grad)"/>
+          <rect x="6.5" y="6.5" width="11" height="11" rx="3" stroke="white" stroke-width="1.5" fill="none"/>
+          <circle cx="12" cy="12" r="2.8" stroke="white" stroke-width="1.5" fill="none"/>
+          <circle cx="16.2" cy="7.8" r="0.7" fill="white"/>
+        </svg>
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="https://jpc-sports.com/anjo/" target="_blank" rel="noopener">公式サイト</a>
+      <a href="https://jpc-sports.com/anjo/corp-contact/" target="_blank" rel="noopener">お問い合わせ</a>
+      <a href="https://line.me/R/ti/p/@679ycvlm?from=page&oat_content=url&openQrModal=true&searchId=679ycvlm" target="_blank" rel="noopener">無料体験申し込み</a>
+    </div>
+    <div class="footer-copy">© 2026 株式会社J-PRoach. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
